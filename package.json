@@ -1,0 +1,15 @@
+{
+  "name": "mean-web-development",
+  "version": "1.0.0",
+  "description": "Example from the book MEAN Web Development by Packt.",
+  "main": "server.js",
+  "repository": "https://github.com/moeabdol/mean-web-development",
+  "author": "moeabdol",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.4.1"
+  }
+}
