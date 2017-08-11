@@ -13,10 +13,11 @@
     "sourceType": "module"
   },
   "rules": {
-    "indent": ["error", 2],
+    "indent": ["error", 2, { "outerIIFEBody": 0 }],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
-    "no-console": [0]
+    "no-console": [0],
+    "keyword-spacing": [2, { "before": true, "after": true }]
   }
 }
