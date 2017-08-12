@@ -27,14 +27,22 @@ exports.read = (req, res) => {
 };
 
 exports.userById = (req, res, next, id) => {
-  User.findOne({
-    _id: id
-  }, (err, user) => {
+  User.findOne({ _id: id }, (err, user) => {
     if (err) {
       return next(err);
     } else {
       req.user = user;
       next();
+    }
+  });
+};
+
+exports.update = (req, res, next) => {
+  User.findByIdAndUpdate(req.user.id, req.body, { new: true }, (err, user) => {
+    if (err) {
+      return next(err);
+    } else {
+      res.status(200).json(user);
     }
   });
 };
