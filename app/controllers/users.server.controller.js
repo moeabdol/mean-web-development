@@ -21,3 +21,20 @@ exports.list = (req, res, next) => {
     }
   });
 };
+
+exports.read = (req, res) => {
+  res.json(req.user);
+};
+
+exports.userById = (req, res, next, id) => {
+  User.findOne({
+    _id: id
+  }, (err, user) => {
+    if (err) {
+      return next(err);
+    } else {
+      req.user = user;
+      next();
+    }
+  });
+};
