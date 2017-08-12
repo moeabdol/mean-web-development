@@ -11,3 +11,13 @@ exports.create = (req, res, next) => {
     }
   });
 };
+
+exports.list = (req, res, next) => {
+  User.find({}, (err, users) => {
+    if (err) {
+      return next(err);
+    } else {
+      res.status(200).json(users);
+    }
+  });
+};
