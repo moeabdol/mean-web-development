@@ -5,6 +5,7 @@ const compress       = require("compression");
 const bodyParser     = require("body-parser");
 const methodOverride = require("method-override");
 const session        = require("express-session");
+const passport       = require("passport");
 
 module.exports = () => {
   const app = express();
@@ -27,6 +28,9 @@ module.exports = () => {
 
   app.set("views", "./app/views");
   app.set("view engine", "ejs");
+
+  app.use(passport.initialize());
+  app.use(passport.session());
 
   require("../app/routes/index.server.routes") (app);
   require("../app/routes/users.server.routes") (app);
