@@ -14,5 +14,5 @@ module.exports = () => {
     });
   });
 
-  require("./strategies/local");
+  require("./strategies/local") (passport);
 };
